@@ -48,6 +48,7 @@
          </children>
       </Pane>
       <Button layoutX="748.0" layoutY="545.0" mnemonicParsing="false" onAction="#clearImage" text="Clear" AnchorPane.rightAnchor="66.8" AnchorPane.topAnchor="545.0" />
-      <Button layoutX="704.0" layoutY="586.0" mnemonicParsing="false" onAction="#comparator" text="Compare GPU and CPU" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="586.0" />
+      <Button layoutX="704.0" layoutY="586.0" mnemonicParsing="false" onAction="#comparator" prefHeight="50.0" prefWidth="144.0" text="Compare return values GPU and CPU" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="586.0" />
+      <Label fx:id="compareLabel" layoutX="702.0" layoutY="643.0" prefHeight="50.0" prefWidth="144.0" wrapText="true" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="643.0" />
    </children>
 </AnchorPane>

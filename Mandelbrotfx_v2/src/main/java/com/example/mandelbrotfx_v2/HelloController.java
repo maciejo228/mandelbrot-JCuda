@@ -36,7 +36,7 @@ public class HelloController {
     @FXML
     public ImageView imageView;
     @FXML
-    public Label pcjTimeLabel, gpuTimeLabel, TimeLabel;
+    public Label pcjTimeLabel, gpuTimeLabel, TimeLabel, compareLabel;
     public static double timePCJ;
     public static int[][] imageTab;
     WritableImage img;
@@ -479,6 +479,7 @@ public class HelloController {
         pcjTimeLabel.setText("--:--:--.---");
         gpuTimeLabel.setText("--:--:--.---");
         TimeLabel.setText("--:--:--.---");
+        compareLabel.setText("");
     }
 
     public void comparator() {
@@ -497,7 +498,6 @@ public class HelloController {
                     diffValues++;
             }
         }
-        System.out.println("Different values: " + diffValues + "/" + (height*width));
-
+        compareLabel.setText("Different values:\n" + diffValues + "/" + (height*width));
     }
 }
