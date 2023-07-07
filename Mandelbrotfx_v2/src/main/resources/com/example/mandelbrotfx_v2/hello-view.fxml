@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="858.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mandelbrotfx_v2.HelloController">
+   <children>
+      <Label layoutX="450.0" layoutY="30.0" prefHeight="25.0" prefWidth="45.0" text="Width" AnchorPane.rightAnchor="104.4" AnchorPane.topAnchor="30.0" />
+      <Label layoutX="450.0" layoutY="60.0" prefHeight="25.0" prefWidth="45.0" text="Height" AnchorPane.rightAnchor="104.4" AnchorPane.topAnchor="60.0" />
+      <Label layoutX="450.0" layoutY="90.0" prefHeight="25.0" prefWidth="45.0" text="MinX" AnchorPane.rightAnchor="104.4" AnchorPane.topAnchor="90.0" />
+      <Label layoutX="450.0" layoutY="120.0" prefHeight="25.0" prefWidth="45.0" text="MaxX" AnchorPane.rightAnchor="104.4" AnchorPane.topAnchor="120.0" />
+      <Label layoutX="450.0" layoutY="150.0" prefHeight="25.0" prefWidth="45.0" text="MinY" AnchorPane.rightAnchor="104.4" AnchorPane.topAnchor="150.0" />
+      <Label layoutX="450.0" layoutY="180.0" prefHeight="25.0" prefWidth="45.0" text="MaxY" AnchorPane.rightAnchor="104.4" AnchorPane.topAnchor="180.0" />
+      <Label layoutX="450.0" layoutY="210.0" prefHeight="25.0" prefWidth="45.0" text="N" AnchorPane.rightAnchor="104.4" AnchorPane.topAnchor="210.0" />
+      <TextField fx:id="h" layoutX="510.0" layoutY="30.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.rightAnchor="39.6" AnchorPane.topAnchor="30.0" />
+      <TextField fx:id="w" layoutX="510.0" layoutY="60.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.rightAnchor="39.6" AnchorPane.topAnchor="60.0" />
+      <TextField fx:id="minx" layoutX="510.0" layoutY="90.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.rightAnchor="39.6" AnchorPane.topAnchor="90.0" />
+      <TextField fx:id="maxx" layoutX="510.0" layoutY="120.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.rightAnchor="39.6" AnchorPane.topAnchor="120.0" />
+      <TextField fx:id="miny" layoutX="510.0" layoutY="150.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.rightAnchor="39.6" AnchorPane.topAnchor="150.0" />
+      <TextField fx:id="maxy" layoutX="510.0" layoutY="180.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.rightAnchor="39.6" AnchorPane.topAnchor="180.0" />
+      <TextField fx:id="n" layoutX="510.0" layoutY="210.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.rightAnchor="39.6" AnchorPane.topAnchor="210.0" />
+      <ScrollPane fx:id="scrollPane" layoutX="14.0" layoutY="14.0" prefHeight="372.0" prefWidth="418.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="167.60000000000002" AnchorPane.topAnchor="14.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="368.0" prefWidth="414.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="145.0" fitWidth="195.0" layoutX="110.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true" />
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
+      <Button layoutX="679.0" layoutY="254.0" mnemonicParsing="false" onAction="#mandelbrot" prefHeight="26.0" prefWidth="46.0" text="Start" AnchorPane.rightAnchor="104.6" AnchorPane.topAnchor="254.0" />
+      <Label fx:id="TimeLabel" layoutX="741.0" layoutY="254.0" prefHeight="26.0" prefWidth="80.0" text="--:--:--.---" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="254.0" />
+      <Pane layoutX="660.0" layoutY="290.0" prefHeight="94.0" prefWidth="163.0" style="-fx-border-color: grey;" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="300.0">
+         <children>
+            <Button layoutX="14.0" layoutY="58.0" mnemonicParsing="false" onAction="#mandelbrotPCJ" prefHeight="26.0" prefWidth="46.0" text="PCJ" />
+            <Label fx:id="pcjTimeLabel" layoutX="74.0" layoutY="58.0" prefHeight="26.0" prefWidth="80.0" text="--:--:--.---" />
+            <TextField fx:id="t" layoutX="67.0" layoutY="14.0" prefHeight="25.0" prefWidth="60.0" />
+            <Label layoutX="15.0" layoutY="14.0" prefHeight="25.0" prefWidth="45.0" text="Threads" />
+         </children>
+      </Pane>
+      <Pane layoutX="692.0" layoutY="405.0" prefHeight="123.0" prefWidth="163.0" style="-fx-border-color: grey;" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="405.0">
+         <children>
+            <Button layoutX="15.0" layoutY="55.0" mnemonicParsing="false" onAction="#mandelbrotGPU" prefHeight="26.0" prefWidth="46.0" text="GPU" />
+            <Label fx:id="gpuTimeLabel" layoutX="70.0" layoutY="55.0" prefHeight="26.0" prefWidth="80.0" text="--:--:--.---" />
+            <Label layoutX="13.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" text="BlockSize" />
+            <TextField fx:id="blockSize" layoutX="70.0" layoutY="14.0" prefHeight="25.0" prefWidth="60.0" promptText="32,64,..." />
+            <Button layoutX="51.0" layoutY="90.0" mnemonicParsing="false" onAction="#gpuInfo" text="GPU Info" />
+         </children>
+      </Pane>
+      <Button layoutX="748.0" layoutY="545.0" mnemonicParsing="false" onAction="#clearImage" text="Clear" AnchorPane.rightAnchor="66.8" AnchorPane.topAnchor="545.0" />
+      <Button layoutX="704.0" layoutY="586.0" mnemonicParsing="false" onAction="#comparator" text="Compare GPU and CPU" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="586.0" />
+   </children>
+</AnchorPane>
